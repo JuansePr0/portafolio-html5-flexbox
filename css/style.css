@@ -1,1 +1,497 @@
+/*
+    ============================================================
+    ESTILOS GENERALES
+    ============================================================
+    
+    Esta hoja de estilos define la apariencia del portafolio.
+    Se utiliza CSS3 y Flexbox para organizar los elementos.
 
+    NO se utilizan frameworks externos como Bootstrap.
+*/
+
+
+/* ------------------------------------------------------------
+   1. CONFIGURACIÓN GENERAL
+   ------------------------------------------------------------ */
+
+/* Eliminamos márgenes y rellenos predeterminados del navegador */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configuración general del documento */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos principales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+
+/* ------------------------------------------------------------
+   2. HEADER Y NAVEGACIÓN
+   ------------------------------------------------------------ */
+
+/*
+    HEADER:
+    Contiene la navegación principal del portafolio.
+*/
+
+header {
+    background-color: #17202a;
+    color: white;
+}
+
+/*
+    NAV:
+    Se utiliza FLEXBOX para organizar horizontalmente
+    el nombre y los enlaces de navegación.
+
+    display: flex:
+    Convierte el elemento en un contenedor Flexbox.
+
+    justify-content:
+    Separa el nombre y el menú.
+
+    align-items:
+    Centra verticalmente los elementos.
+*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav h1 {
+    font-size: 1.6rem;
+}
+
+/*
+    La lista de navegación también utiliza Flexbox
+    para colocar los enlaces uno al lado del otro.
+*/
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Cambio visual cuando el usuario pasa el cursor */
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------
+   3. MAIN
+   ------------------------------------------------------------ */
+
+/*
+    MAIN:
+    Contiene todo el contenido principal de la página.
+*/
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ------------------------------------------------------------
+   3.1 IMAGEN DE PERFIL
+   ------------------------------------------------------------ */
+
+/*
+    La imagen de perfil tiene un tamaño fijo para evitar
+    que ocupe demasiado espacio en la página.
+
+    width y height:
+    Controlan el ancho y alto de la imagen.
+
+    object-fit: cover:
+    Mantiene la proporción de la imagen sin deformarla.
+
+    border-radius: 50%:
+    Convierte la imagen en un círculo.
+*/
+
+#sobre-mi > img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* ------------------------------------------------------------
+   4. SECCIONES
+   ------------------------------------------------------------ */
+
+/*
+    Cada SECTION representa una parte diferente
+    del portafolio.
+
+    Se utiliza Flexbox para organizar los elementos
+    internos cuando sea necesario.
+*/
+
+section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+
+/* ------------------------------------------------------------
+   5. HABILIDADES
+   ------------------------------------------------------------ */
+
+/*
+    La sección de habilidades utiliza Flexbox.
+
+    flex-wrap:
+    Permite que los elementos pasen a una nueva línea
+    cuando no existe suficiente espacio horizontal.
+*/
+
+#habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#habilidades h2 {
+    width: 100%;
+}
+
+/*
+    Cada ARTICLE funciona como una tarjeta
+    independiente de habilidad.
+*/
+
+#habilidades article {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    background-color: #eaf2f8;
+    border-radius: 8px;
+}
+
+/*
+    Imágenes de los proyectos.
+    Se utiliza un tamaño menor para que las capturas
+    no dominen visualmente las tarjetas.
+*/
+
+#proyectos article img {
+    width: 50%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 6px;
+}
+
+/* ------------------------------------------------------------
+   6. PROYECTOS
+   ------------------------------------------------------------ */
+
+/*
+    Los proyectos también utilizan Flexbox.
+
+    flex-direction: row:
+    Coloca los artículos horizontalmente.
+
+    justify-content:
+    Distribuye el espacio disponible.
+
+    align-items:
+    Alinea los artículos verticalmente.
+*/
+
+#proyectos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#proyectos h2 {
+    width: 100%;
+}
+
+#proyectos article {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   7. FORMULARIO
+   ------------------------------------------------------------ */
+
+/*
+    El formulario utiliza Flexbox para organizar
+    sus elementos verticalmente.
+*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 700px;
+}
+
+/*
+    Cada grupo contiene un label y su respectivo campo.
+*/
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+/*
+    El estado :focus ayuda a identificar visualmente
+    el campo que está utilizando el usuario.
+*/
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #2980b9;
+}
+
+
+/* ------------------------------------------------------------
+   8. BOTÓN
+   ------------------------------------------------------------ */
+
+button {
+    width: fit-content;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #17202a;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+
+/* ------------------------------------------------------------
+   9. FOOTER
+   ------------------------------------------------------------ */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background-color: #17202a;
+    color: white;
+}
+
+
+/*
+    ============================================================
+    DISEÑO RESPONSIVE
+    ============================================================
+
+    Se utilizan tres breakpoints:
+
+    1. Móvil
+    2. Tableta
+    3. Escritorio
+
+    Esto permite que la página reorganice su contenido
+    dependiendo del tamaño de pantalla.
+*/
+
+
+/* ============================================================
+   BREAKPOINT 1 — MÓVIL
+   Pantallas menores o iguales a 600px
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    /*
+        En móvil la navegación cambia de horizontal
+        a vertical utilizando flex-direction: column.
+    */
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /*
+        Los enlaces también se organizan verticalmente.
+    */
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 20px 10px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    /*
+        Las habilidades pasan a ocupar todo el ancho.
+    */
+
+    #habilidades {
+        flex-direction: column;
+    }
+
+    #habilidades article {
+        width: 100%;
+    }
+
+    /*
+        Los proyectos también pasan de horizontal
+        a vertical en dispositivos móviles.
+    */
+
+    #proyectos {
+        flex-direction: column;
+    }
+
+    #proyectos article {
+        width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ============================================================
+   BREAKPOINT 2 — TABLETA
+   Entre 601px y 1024px
+   ============================================================ */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    /*
+        En tablet se mantiene la navegación horizontal.
+    */
+
+    nav {
+        padding: 20px 30px;
+    }
+
+    /*
+        Las habilidades utilizan dos columnas.
+    */
+
+    #habilidades article {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    /*
+        Los proyectos también se organizan
+        utilizando Flexbox.
+    */
+
+    #proyectos article {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    main {
+        padding: 30px;
+    }
+}
+
+
+/* ============================================================
+   BREAKPOINT 3 — ESCRITORIO
+   1025px o más
+   ============================================================ */
+
+@media (min-width: 1025px) {
+
+    /*
+        En escritorio tenemos suficiente espacio para
+        mostrar los elementos horizontalmente.
+    */
+
+    nav {
+        flex-direction: row;
+    }
+
+    /*
+        Las tarjetas de habilidades ocupan
+        partes iguales del espacio disponible.
+    */
+
+    #habilidades article {
+        flex: 1 1 0;
+    }
+
+    /*
+        Los tres proyectos pueden aparecer
+        en una misma fila.
+    */
+
+    #proyectos article {
+        flex: 1 1 0;
+    }
+}
