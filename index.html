@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!--
+        HEAD:
+        Contiene información de configuración de la página.
+        El atributo lang="es" indica que el contenido está en español.
+    -->
+
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte correctamente a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparecerá en la pestaña del navegador -->
+    <title>Portafolio Personal | Sebastián Cabanzo</title>
+
+    <!-- Conectamos el documento HTML con nuestra hoja de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!--
+        HEADER:
+        Representa la cabecera principal del sitio.
+        Aquí se encuentra el nombre del propietario del portafolio
+        y el menú de navegación.
+    -->
+    <header>
+
+        <nav aria-label="Navegación principal">
+            <!--
+                NAV:
+                Representa el menú principal de navegación.
+                aria-label permite identificar claramente este landmark
+                para usuarios que utilizan tecnologías de asistencia.
+            -->
+
+            <h1>Sebastián Cabanzo</h1>
+
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+    <!--
+        MAIN:
+        Es el contenido principal de la página.
+        La rúbrica exige que exista UN SOLO elemento <main>.
+    -->
+    <main>
+
+        <!--
+            SECTION:
+            Agrupa el contenido relacionado con la presentación personal.
+            El id permite que el menú pueda llevar directamente a esta sección.
+        -->
+        <section id="sobre-mi">
+
+            <img 
+                src="img/Perfil1.jpg" 
+                alt="Fotografía de Sebastián Cabanzo"
+            >
+
+            <h2>Sobre mí</h2>
+
+            <p>
+                Soy estudiante de Ingeniería de Software en la universidad Manuela Beltran, interesado en el
+                desarrollo de aplicaciones web, programación y tecnología.
+            </p>
+
+            <p>
+                En este portafolio presento algunos de mis conocimientos,
+                proyectos y formas de contacto.
+            </p>
+            
+
+        </section>
+
+
+        <!--
+            SECTION:
+            Esta sección contiene las habilidades técnicas.
+        -->
+        <section id="habilidades">
+
+            <h2>Habilidades</h2>
+
+            <!--
+                ARTICLE:
+                Cada habilidad representa un contenido independiente
+                dentro de la sección.
+            -->
+            <article>
+                <h3>Desarrollo Web</h3>
+                <p>HTML5, CSS3 y diseño responsive.</p>
+            </article>
+
+            <article>
+                <h3>Programación</h3>
+                <p>Programación orientada a objetos y desarrollo de software.</p>
+            </article>
+
+            <article>
+                <h3>Bases de Datos</h3>
+                <p>Conocimientos de bases de datos SQL y NoSQL.</p>
+            </article>
+
+        </section>
+
+
+        <!--
+            SECTION:
+            Contiene algunos de los proyectos realizados.
+        -->
+        <section id="proyectos">
+
+            <h2>Proyectos</h2>
+
+            <article>
+                <img src="img/Captura1.png" alt="Captura del proyecto 1">
+                <h3>Proyecto 1 - Sistema Web</h3>
+                <p>
+                    Desarrollo de un prototipo de sistema web utilizando
+                    tecnologías de desarrollo frontend.
+                </p>
+            </article>
+
+            <article>
+                <img src="img/Captura2.png" alt="Captura del proyecto 2">
+                <h3>Proyecto 2 - Curso de Ciberseguridad</h3>
+                <p>
+                    Curso introductorio acerca de la ciberseguridad para
+                    saber conceptos claves y aspectos importantes de 
+                    todo este mundo
+                </p>
+            </article>
+
+            <article>
+                <img src="img/Captura3.png" alt="Captura del proyecto 3">
+                <h3>Proyecto 3 - Curso de Base de datos</h3>
+                <p>
+                    Curso que se realizo en la pagina sololearn acerca de
+                    la creacion y contexto de bases de datos
+                </p>
+            </article>
+
+        </section>
+
+
+        <!--
+            SECTION:
+            Contiene el formulario de contacto.
+            Cada campo tiene un <label> asociado mediante for/id,
+            lo cual mejora la accesibilidad.
+        -->
+        <section id="contacto">
+
+            <h2>Contacto</h2>
+
+            <form action="#" method="post">
+
+                <!-- Campo de nombre -->
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        required
+                    >
+                </div>
+
+                <!-- Campo de correo -->
+                <div>
+                    <label for="correo">Correo electrónico:</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        required
+                    >
+                </div>
+
+                <!-- Campo de asunto -->
+                <div>
+                    <label for="asunto">Asunto:</label>
+                    <input
+                        type="text"
+                        id="asunto"
+                        name="asunto"
+                        required
+                    >
+                </div>
+
+                <!-- Campo de mensaje -->
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea
+                        id="mensaje"
+                        name="mensaje"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- Botón para enviar el formulario -->
+                <button type="submit">Enviar mensaje</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!--
+        FOOTER:
+        Representa el pie de página.
+        Contiene información adicional del sitio.
+    -->
+    <footer>
+
+        <p>
+            &copy; 2026 Sebastián Cabanzo. Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
